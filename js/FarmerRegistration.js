@@ -1,3 +1,42 @@
+let city = document.querySelector("#city");
+let country = document.querySelector("#country");
+fetch('https://localhost:7133/api/GatewaysTest/GetCountryAndCitiesAsync', {
+                    method : "GET",
+         }).then((response) => response.json()).then((result) => {
+                    console.log(result)
+                    result.forEach(x => {
+                        country.innerHTML += `
+                        <option value="${x.country}">${x.country}</option>
+                        `
+                    })
+         }).catch((e) => 
+         {
+                    console.log(e);
+         })
+
+city.addEventListener("click", (e) =>{
+    fetch('https://localhost:7133/api/GatewaysTest/GetCountryAndCitiesAsync', {
+        method : "GET",
+        }).then((response) => response.json()).then((result) => {
+                console.log(result)
+                result.forEach(x => {
+                    if(x.country == country.value)
+                    {
+                        console.log("25", x.cities);
+                        x.cities.forEach(y => {
+                            city.innerHTML += `
+                            <option value="${y}">${y}</option>
+                            `
+                        })
+                        
+                    }
+                    
+                })
+        }).catch((e) => 
+        {
+                console.log(e);
+        })
+})
 
 let submitButton = document.querySelector("#sub-btn");
 let listButton = document.querySelector("#list-btn");
@@ -8,13 +47,13 @@ submitButton.addEventListener("click", (e) => {
 
  e.preventDefault();
           let nam = document.querySelector("#name");
-          let locatio = document.querySelector("#location");
-          let languag = document.querySelector("#language");
+          let country = document.querySelector("#country");
           let phoneNumbe = document.querySelector("#Number");
+          let languag = document.querySelector("#language");
           Data = {
                     name : nam.value,
                     phoneNumber : phoneNumbe.value,
-                    location : locatio.value,
+                    location : city.value,
                     language : languag.value,
           };
           
