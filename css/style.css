@@ -144,6 +144,18 @@
         transition: .5s;
         opacity: 1;
     }
+    .app{
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        margin-top: 91px;
+    }
+    .app-img{
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+        border-radius: 60px;
+        height: 450px;
+        border: 1px solid green;
+    }
 }
 .app{
     display: flex;
@@ -153,10 +165,11 @@
 }
 .app-img{
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
-    border-radius: 40px;
+    border-radius: 60px;
     height: 450px;
-    
+    border: 1px solid green;
 }
+
 
 /*** Header ***/
 .carousel-caption {

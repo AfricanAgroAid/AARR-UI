@@ -1,0 +1,99 @@
+body {
+  font-family: Verdana;
+  margin: 0;
+  padding: 0;
+  background: url('/assets/wallpaper.png');
+}
+
+#inputs {
+  margin: 10px auto;
+  text-align: center;
+}
+li{
+  list-style-type: none;
+  font-weight: lighter;
+  font-style: italic;
+}
+input {
+  width: 500px;
+  height: 40px;
+  font-size: 1.5em;
+  color: #222;
+  padding: 0;
+  margin-top: 12px;
+  border-radius: 10px;
+  padding: 7px;
+  outline: white;
+  border-bottom: 2px solid transparent;
+  transition: transform .4s;
+ 
+}
+
+#getWeather {
+  margin-left: 5px;
+  height: 53px;
+  /* line-height: 2px; */
+  width: 150px;
+  border: black;
+  background: green;
+  color: #ffe;
+  font-size: 1.1em;
+  vertical-align: top;
+  margin-top: 17px;
+  border-radius: 10px;
+  letter-spacing: 3px;
+  padding-right: 5px;
+  padding-left: 5px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  transition: transform .4s;
+}
+#getWeather:hover{
+  transform: scale(1.2);
+  margin-left: 17px;
+}
+h1 {
+  text-align: center;
+  color: #222;
+  font-size: 1.7em;
+}
+
+#main {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
+}
+
+.update {
+  box-shadow: 5px 5px 5px #333;
+  border-radius: 15px;
+  text-align: center;
+  color: #ffe;
+  max-width: 339px;
+}
+
+.icon {
+  padding: 5px;
+  border-radius: 50%;
+  width: 40%;
+  height: 30%;
+  margin: 0 auto;
+  background: #90e0ef;
+  max-width: 140px;
+}
+
+p {
+  font-weight: 500;
+  font-size: 1.2em;
+}
+
+@media only screen and (min-width: 1022px) {
+  #main {
+    grid-template-columns: repeat(3, 330px);
+    justify-content: center;
+  }
+  .icon {
+    width: 35%;
+  }
+}
