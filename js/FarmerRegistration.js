@@ -80,6 +80,7 @@ submitButton.addEventListener("click", (e) => {
                     alert(`Farmer with phone number:${phoneNumbe.value} already exists`)
                   }
                     console.log(result)
+                    return;
                     localStorage.setItem("farmerId", result.data.id);
                     localStorage.setItem("country",country.value);
                     alert(result.messages);
