@@ -386,7 +386,17 @@
     color: #999999;
     margin-right: 10px;
 }
+#subm-btn{
+    display: flex;
+    margin-top: 71px;
+    justify-self: center;
+}
 
+#subm-btn:hover{
+ color: white;
+ background-color: greenyellow;
+ 
+}
 .footer .btn.btn-link:hover {
     color: var(--light);
     letter-spacing: 1px;
