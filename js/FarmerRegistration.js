@@ -2,7 +2,7 @@ let city = document.querySelector("#city");
 
 let country = document.querySelector("#country");
 let countriesAndCities;
-const baseUrl = `http://aarr22-001-site1.etempurl.com/api/`
+const baseUrl = `https://localhost:7133/api/`
 let farmLocations = [];
 
 consumeCountriesAndCities();

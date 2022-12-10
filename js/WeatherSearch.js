@@ -1,4 +1,5 @@
 //DECLARE VARIABLES
+const baseUrl = `https://localhost:7133/api/`
 let main = document.getElementById("main");
 let title = document.getElementById("location");
 const getBtn = document.getElementById("getWeather");
@@ -6,7 +7,7 @@ let input = document.getElementById("userInput");
 let temperature = document.querySelector("temp");
 let icons = "http://openweathermap.org/img/wn/";
 let loc = "";
-var url = `https://localhost:7133/api/Utility/SearchWeatherForcastByLocation?farmLocation=`;
+var url = `${baseUrl}Utility/SearchWeatherForcastByLocation?farmLocation=`;
 let date = "";
 let time = "";
 let background = "";
@@ -16,7 +17,6 @@ let day = "/assets/Day.png";
 let cities = [];
 let xCities;
 let countriesAndCities;
-const baseUrl = `https://localhost:7133/api/`
 fetch(`${baseUrl}GatewaysTest/GetCountryAndCitiesAsync`, {
  method : "GET",
 }).then((response) => response.json()).then((result) => {
