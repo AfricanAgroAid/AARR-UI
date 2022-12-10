@@ -73,14 +73,22 @@ submitButton.addEventListener("click", (e) => {
     body: JSON.stringify(Data)
   }).then((response) => response.json()).then((result) => {
     if (result.data === null) {
-      alert(`Farmer with phone number:${phoneNumbe.value} already exists`)
+      swal({
+        icon: 'error',
+        title: 'Oops...',
+        text: `Farmer with phone number:${phoneNumbe.value} already exists`,
+      })
     }
     else if (result.data !== null) {
       console.log(result)
 
       localStorage.setItem("farmerId", result.data.id);
       localStorage.setItem("country", country.value);
-      alert(result.messages);
+      swal({
+        title: "Success!",
+        text: `${result.messages}`,
+        icon: "success",
+      });
       farmReg.style.display = "block";
       farmerReg.style.display = "none";
     }
@@ -142,7 +150,10 @@ regFarm.addEventListener("click", (e) => {
     body: JSON.stringify(farms)
   }).then((response) => response.json()).then((result) => {
     console.log(result)
-    alert(result.messages[2]);
+    swal({
+      title: "Success!",
+      text: `${result.messages[2]}`,
+    });
   }).catch((e) => {
     console.log(e);
   })
