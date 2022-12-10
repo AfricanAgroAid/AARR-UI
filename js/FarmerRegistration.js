@@ -2,7 +2,7 @@ let city = document.querySelector("#city");
 
 let country = document.querySelector("#country");
 let countriesAndCities;
-const baseUrl = `https://localhost:7133/api/`
+const baseUrl = `http://aarr22-001-site1.etempurl.com/api/`
 let farmLocations = [];
 
 consumeCountriesAndCities();
@@ -65,7 +65,7 @@ submitButton.addEventListener("click", (e) => {
     language: languag.value,
   };
   console.log(Data.location, "70");
-  fetch('https://localhost:7133/api/Farmer/RegisterFarmerAsync', {
+  fetch(`${baseUrl}Farmer/RegisterFarmerAsync`, {
     method: "POST",
     headers: {
       'Content-Type': 'application/json'
@@ -134,7 +134,7 @@ regFarm.addEventListener("click", (e) => {
   console.log("seen");
   e.preventDefault();
 
-  fetch('https://localhost:7133/api/Farm/BulkFarmRegistration', {
+  fetch(`${baseUrl}Farm/BulkFarmRegistration`, {
     method: "POST",
     headers: {
       'Content-Type': 'application/json'
